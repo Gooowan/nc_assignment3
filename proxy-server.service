@@ -1,0 +1,14 @@
+[Unit]
+Description=Proxy Server Service
+After=apache2.service
+Requires=apache2.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat TCP-LISTEN:80,reuseaddr,fork EXEC:/home/ubuntu/assignment3/proxy_server.sh,stderr
+User=ubuntu
+Environment="PATH=/bin:/usr/bin:/usr/local/bin"
+WorkingDirectory=/home/ubuntu/assignment3
+
+[Install]
+WantedBy=multi-user.target
