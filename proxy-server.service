@@ -9,6 +9,7 @@ ExecStart=/usr/bin/socat TCP-LISTEN:80,reuseaddr,fork EXEC:/home/ubuntu/nc_assig
 User=ubuntu
 Environment="PATH=/bin:/usr/bin:/usr/local/bin"
 WorkingDirectory=/home/ubuntu/nc_assignment3
+AmbientCapabilities=CAP_NET_BIND_SERVICE
 
 [Install]
 WantedBy=multi-user.target
